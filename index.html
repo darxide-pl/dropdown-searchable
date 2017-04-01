@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="dropdown-searchable.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+
+			<h1 class="page-header">1. Requirements</h1>
+			<ul>
+				<li>Jquery</li>
+				<li>Bootstrap</li>
+			</ul>
+
+<pre>
+&#x3C;script
+  src=&#x22;https://code.jquery.com/jquery-2.2.4.min.js&#x22;
+  integrity=&#x22;sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=&#x22;
+  crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;&#x9;
+&#x3C;script src=&#x22;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; type=&#x22;text/css&#x22; href=&#x22;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&#x22;&#x3E;	
+</pre>
+
+			<h1 class="page-header">2. Examples</h1>
+			<h3>Basic example</h3>
+
+			<div class="form-group">
+				<div class="dropdown" id="first">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						Basic example
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">Node.js</a></li>
+						<li><a href="#">PHP</a></li>
+					</ul>
+				</div>				
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;first&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;Basic example
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HTML&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CSS&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;JavaScript&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Python&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Node.js&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;PHP&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#first&#x27;).searchable()
+&#x3C;/script&#x3E;
+</pre>
+
+			<h3>Predefined data</h3>
+			<div class="form-group">
+				<div class="dropdown" id="second">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						Predefined data
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu"></ul>
+				</div>	
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;second&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;Predefined data
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#second&#x27;).searchable({
+&#x9;data : [
+&#x9;&#x9;{
+&#x9;&#x9;&#x9;href : &#x27;#&#x27;,
+&#x9;&#x9;&#x9;text : &#x27;HTML&#x27;
+&#x9;&#x9;}, 
+&#x9;&#x9;{
+&#x9;&#x9;&#x9;href : &#x27;#&#x27;,
+&#x9;&#x9;&#x9;text : &#x27;CSS&#x27;
+&#x9;&#x9;},
+&#x9;&#x9;{
+&#x9;&#x9;&#x9;href : &#x27;#&#x27;,
+&#x9;&#x9;&#x9;text : &#x27;JavaScript&#x27;
+&#x9;&#x9;},
+&#x9;&#x9;{
+&#x9;&#x9;&#x9;href : &#x27;#&#x27;,
+&#x9;&#x9;&#x9;text : &#x27;Python&#x27;
+&#x9;&#x9;}, 
+&#x9;&#x9;{
+&#x9;&#x9;&#x9;href : &#x27;#&#x27;,
+&#x9;&#x9;&#x9;text : &#x27;Node.js&#x27;
+&#x9;&#x9;},
+&#x9;&#x9;{
+&#x9;&#x9;&#x9;href : &#x27;#&#x27;,
+&#x9;&#x9;&#x9;text : &#x27;PHP&#x27;&#x9;
+&#x9;&#x9;}
+&#x9;]
+})
+&#x3C;/script&#x3E;
+</pre>
+
+			<h3>JSON Feed</h3>
+
+			<p>
+				With this option, search logic is on your (server) side. Plugin only polulate dropdown with your result. JSON schema should be the same as above "data example"
+			</p>
+
+			<div class="form-group">
+				<div class="dropdown" id="third">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						JSON feed
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu"></ul>
+				</div>				
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;third&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;JSON feed
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#third&#x27;).searchable({
+&#x9;feed : &#x27;http://www.dariuszm.pl/manager/searchable/demo/&#x27;
+})
+&#x3C;/script&#x3E;
+</pre>
+
+			<h1 class="page-header">3. Options</h1>
+			<h3>Delay</h3>
+			<p>
+				<code>delay</code> int (miliseconds)
+			</p>
+			<p>
+				Use this option to wait for user stop typing text.
+			</p>
+
+			<div class="form-group">
+				<div class="dropdown" id="fourth">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						Delay example
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">Node.js</a></li>
+						<li><a href="#">PHP</a></li>
+					</ul>
+				</div>
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;fourth&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;Delay example
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HTML&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CSS&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;JavaScript&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Python&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Node.js&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;PHP&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#fourth&#x27;).searchable({
+&#x9;delay : 1000
+})
+&#x3C;/script&#x3E;	
+</pre>
+
+			<h3>Placeholder</h3>
+			<p>
+				<code>placeholder</code> string
+			</p>
+			<p>
+				Placeholder inside input
+			</p>
+
+			<div class="form-group">
+				<div class="dropdown" id="fifth">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						Placeholder example
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">Node.js</a></li>
+						<li><a href="#">PHP</a></li>
+					</ul>
+				</div>
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;fifth&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;Placeholder example
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HTML&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CSS&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;JavaScript&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Python&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Node.js&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;PHP&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#fifth&#x27;).searchable({
+&#x9;placeholder : &#x27;type your text here&#x27;
+})
+&#x3C;/script&#x3E;
+</pre>
+
+			<h1 class="page-header">4. Events</h1>
+			<h3>beforeSearch</h3>
+			<p>
+				fires before executing search
+			</p>
+
+			<div class="form-group">
+				<div class="dropdown" id="sixth">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						beforeSearch example
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">Node.js</a></li>
+						<li><a href="#">PHP</a></li>
+					</ul>
+				</div>				
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;sixth&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;beforeSearch example
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HTML&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CSS&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;JavaScript&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Python&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Node.js&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;PHP&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#sixth&#x27;).searchable()
+
+$(&#x27;#sixth&#x27;).on(&#x27;beforeSearch&#x27; , function() {
+&#x9;alert(&#x27;before search&#x27;)
+})
+&#x3C;/script&#x3E;
+</pre>
+
+			<h3>afterSearch</h3>
+			<p>
+				fires after search
+			</p>
+
+			<div class="form-group">
+				<div class="dropdown" id="seventh">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						afterSearch example
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">Node.js</a></li>
+						<li><a href="#">PHP</a></li>
+					</ul>
+				</div>				
+			</div>
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;seventh&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;afterSearch example
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HTML&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CSS&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;JavaScript&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Python&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Node.js&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;PHP&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;&#x9;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#seventh&#x27;).searchable()
+
+$(&#x27;#seventh&#x27;).on(&#x27;afterSearch&#x27; , function() {
+&#x9;alert(&#x27;after search&#x27;)
+})
+&#x3C;/script&#x3E;
+</pre>
+
+
+			<h3>notFound</h3>
+			<p>
+				fires after search and when there is no result
+			</p>
+
+			<div class="form-group">
+				<div class="dropdown" id="eighth">
+					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						notFound example
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HTML</a></li>
+						<li><a href="#">CSS</a></li>
+						<li><a href="#">JavaScript</a></li>
+						<li><a href="#">Python</a></li>
+						<li><a href="#">Node.js</a></li>
+						<li><a href="#">PHP</a></li>
+					</ul>
+				</div>
+			</div>			
+
+<pre>
+&#x3C;div class=&#x22;dropdown&#x22; id=&#x22;eighth&#x22;&#x3E;
+&#x9;&#x3C;button class=&#x22;btn btn-default dropdown-toggle&#x22; type=&#x22;button&#x22; data-toggle=&#x22;dropdown&#x22;&#x3E;
+&#x9;&#x9;notFound example
+&#x9;&#x9;&#x3C;span class=&#x22;caret&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x3C;/button&#x3E;
+&#x9;&#x3C;ul class=&#x22;dropdown-menu&#x22;&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;HTML&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;CSS&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;JavaScript&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Python&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Node.js&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x9;&#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;PHP&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x9;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+$(&#x27;#eighth&#x27;).searchable()
+
+$(&#x27;#eighth&#x27;).on(&#x27;notFound&#x27; , function() {
+&#x9;alert(&#x27;not found&#x27;)
+})
+&#x3C;/script&#x3E;
+</pre>
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$('#first').searchable()
+
+$('#second').searchable({
+	data : [
+		{
+			href : '#',
+			text : 'HTML'
+		}, 
+		{
+			href : '#',
+			text : 'CSS'
+		},
+		{
+			href : '#',
+			text : 'JavaScript'
+		},
+		{
+			href : '#',
+			text : 'Python'
+		}, 
+		{
+			href : '#',
+			text : 'Node.js'
+		},
+		{
+			href : '#',
+			text : 'PHP'	
+		}
+	]
+})
+
+$('#third').searchable({
+	feed : 'http://www.dariuszm.pl/manager/searchable/demo/'
+})
+
+$('#fourth').searchable({
+	delay : 1000
+})
+
+$('#fifth').searchable({
+	placeholder : 'type your text here'
+})
+
+$('#sixth').searchable()
+
+$('#sixth').on('beforeSearch' , function() {
+	alert('before search')
+})
+
+$('#seventh').searchable()
+
+$('#seventh').on('afterSearch' , function() {
+	alert('after search')
+})
+
+$('#eighth').searchable()
+
+$('#eighth').on('notFound' , function() {
+	alert('not found')
+})
+
+</script>
+</body>
+</html>
